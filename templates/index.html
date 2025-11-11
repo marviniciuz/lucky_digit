@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCKY DIGIT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>ESCOLHA SEU NÚMERO</h2>
+            
+            <div class="form-group">
+                <label for="quantidade">SORTEAR NÚMEROS:</label>
+                <input type="number" id="quantidade" value="3" min="1">
+            </div>
+
+            <div class="form-group-inline">
+                <label>Entre:</label>
+                <input type="number" id="min" value="1" min="1">
+                <label>e</label>
+                <input type="number" id="max" value="50" min="1">
+            </div>
+
+            <div class="form-options">
+                <input type="checkbox" id="check-countdown">
+                <label for="check-countdown">Contagem Regressiva (5s)</label>
+            </div>
+
+            <button id="btn-sortear">INICIAR SORTEIO</button>
+            <div id="status-message"></div> </div>
+
+        <div class="card">
+            <h2>RESULTADOS DO SORTEIO</h2>
+            <div id="resultados-container">
+                </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

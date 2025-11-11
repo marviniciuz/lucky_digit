@@ -1,0 +1,25 @@
+# --- Python ---
+# Bytecode compilado (gerado automaticamente ao rodar o script)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Ambientes Virtuais (Virtual Environments) ---
+# É muito importante não subir a pasta do seu ambiente virtual
+venv/
+env/
+.venv/
+.env/
+
+# --- Variáveis de Ambiente e Segredos ---
+# Se você criar um arquivo para guardar senhas ou chaves secretas
+.env
+
+# --- VS Code ---
+# Configurações locais do seu editor que não precisam ir para outros devs
+.vscode/
+
+# --- Sistema Operacional ---
+# Arquivos de sistema (Mac/Windows)
+.DS_Store
+Thumbs.db
