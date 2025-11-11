@@ -1,0 +1,138 @@
+/* Configurações básicas e tema escuro */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço entre as duas caixas */
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilo das caixas principais */
+.card {
+    background-color: #0d0d0d;
+    border: 2px solid #555;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
+    color: #eee;
+    margin-top: 0;
+}
+
+/* Estilos do formulário */
+.form-group, .form-group-inline, .form-options {
+    margin-bottom: 20px;
+}
+
+.form-group label, .form-group-inline label {
+    color: #00aaff; /* Cor azul do texto */
+    margin-right: 10px;
+}
+
+.form-group-inline {
+    display: flex;
+    align-items: center;
+}
+
+/* Inputs de número */
+input[type="number"] {
+    background-color: #333;
+    border: 1px solid #777;
+    border-radius: 5px;
+    color: #f0f0f0;
+    padding: 8px;
+    width: 60px; /* Largura dos inputs pequenos */
+    text-align: center;
+}
+
+/* Input de quantidade (mais largo) */
+#quantidade {
+    width: 80px;
+}
+
+/* Botão principal */
+button#btn-sortear {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#btn-sortear:hover {
+    background-color: #0088cc;
+}
+
+button#btn-sortear:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* Mensagem de status (contagem/erro) */
+#status-message {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #ffc107; /* Amarelo para contagem */
+}
+
+/* --- RESULTADOS --- */
+
+#resultados-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    min-height: 50px; /* Altura mínima para manter o layout */
+    perspective: 1000px; /* Para o efeito 3D da animação */
+}
+
+/* Estilo do número sorteado (escondido) */
+.numero-sorteado {
+    width: 70px;
+    height: 70px;
+    background-color: #333; /* Fundo escuro (costas do cartão) */
+    border: 2px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    /* Configuração da animação de virar */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg); /* Começa virado para frente (escondido) */
+    
+    /* Para centralizar o número quando ele aparecer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: transparent; /* Esconde o número inicialmente */
+}
+
+/* Estilo do número revelado (ao adicionar a classe .revealed) */
+.numero-sorteado.revealed {
+    background-color: #f0f0f0; /* Fundo claro (frente do cartão) */
+    color: #1a1a1a; /* Texto escuro */
+    transform: rotateY(180deg); /* Vira o cartão */
+}
