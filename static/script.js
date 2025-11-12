@@ -14,21 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSortear.addEventListener('click', iniciarProcesso);
 
     function iniciarProcesso() {
-        // Desabilita o botão para evitar cliques múltiplos
-        btnSortear.disabled = true;
-        
-        // Limpa resultados e mensagens anteriores
-        resultadosContainer.innerHTML = '';
-        statusMessage.textContent = '';
-        statusMessage.style.color = '#ffc107'; // Cor de contagem/aviso
+    // Desabilita o botão para evitar cliques múltiplos
+    btnSortear.disabled = true;
+    
+    // Limpa resultados e mensagens anteriores
+    resultadosContainer.innerHTML = '';
+    statusMessage.textContent = '';
+    statusMessage.style.color = '#ffc107'; // <--- ESTA LINHA MUDA
 
-        // Verifica se a contagem regressiva está marcada
-        if (checkCountdown.checked) {
-            iniciarContagemRegressiva(5); // Inicia contagem de 5 segundos
-        } else {
-            realizarSorteio(); // Sorteia imediatamente
-        }
+    // Verifica se a contagem regressiva está marcada
+    if (checkCountdown.checked) {
+        iniciarContagemRegressiva(5); // Inicia contagem de 5 segundos
+    } else {
+        realizarSorteio(); // Sorteia imediatamente
     }
+}
 
     // RECURSO 1: Contagem Regressiva
     function iniciarContagemRegressiva(segundos) {
@@ -108,10 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função para exibir mensagens de erro
+   // Função para exibir mensagens de erro
     function exibirErro(mensagem) {
         statusMessage.textContent = mensagem;
-        statusMessage.style.color = '#dc3545'; // Cor vermelha para erro
+        // statusMessage.style.color = '#dc3545'; // Não precisamos mais disto
+        statusMessage.classList.add('error-text'); // Adiciona classe de erro
         btnSortear.disabled = false;
     }
 });
