@@ -3,44 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUCKY DIGIT</title>
+    <title>Lucky Digit</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <div class="container">
-        
-        <div class="card">
-            <h2>ESCOLHA SEU NÚMERO</h2>
-            
-            <div class="form-group">
-                <label for="quantidade">SORTEAR NÚMEROS:</label>
-                <input type="number" id="quantidade" value="3" min="1">
-            </div>
+    <main class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="card-panel white z-depth-2">
+                    <h4 class="center-align">ESCOLHA SEU NÚMERO</h4>
 
-            <div class="form-group-inline">
-                <label>Entre:</label>
-                <input type="number" id="min" value="1" min="1">
-                <label>e</label>
-                <input type="number" id="max" value="50" min="1">
-            </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">format_list_numbered</i>
+                            <input id="quantidade" type="number" class="validate" value="3" min="1">
+                            <label for="quantidade">SORTEAR NÚMEROS:</label>
+                        </div>
+                    </div>
 
-            <div class="form-options">
-                <input type="checkbox" id="check-countdown">
-                <label for="check-countdown">Contagem Regressiva (5s)</label>
-            </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">filter_list</i>
+                            <input id="min" type="number" class="validate" value="1" min="1">
+                            <label for="min">Entre:</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="max" type="number" class="validate" value="50" min="1">
+                            <label for="max">e:</label>
+                        </div>
+                    </div>
 
-            <button id="btn-sortear">INICIAR SORTEIO</button>
-            <div id="status-message"></div> </div>
+                    <div class="row switch-container">
+                        <div class="switch">
+                            <label>
+                                Sortear Já
+                                <input type="checkbox" id="check-countdown">
+                                <span class="lever"></span>
+                                Contagem Regressiva
+                            </label>
+                        </div>
+                    </div>
 
-        <div class="card">
-            <h2>RESULTADOS DO SORTEIO</h2>
-            <div id="resultados-container">
+                    <div class="row center-align">
+                        <button class="btn btn-large waves-effect waves-light btn-gradient" id="btn-sortear">
+                            INICIAR SORTEIO
+                            <i class="material-icons right">casino</i>
+                        </button>
+                    </div>
+
+                    <div id="status-message" class="center-align"></div>
                 </div>
+            </div>
         </div>
 
-    </div>
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="card-panel white z-depth-2">
+                    <h4 class="center-align">RESULTADOS DO SORTEIO</h4>
+                    <div id="resultados-container" class="center-align">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Inicializa todos os componentes Materializecss
+        M.AutoInit(); 
+      });
+    </script>
 </body>
 </html>
