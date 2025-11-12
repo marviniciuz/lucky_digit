@@ -13,12 +13,12 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Espaço entre as duas caixas */
+    gap: 30px;
     width: 100%;
     max-width: 500px;
 }
 
-/* Estilo das caixas principais */
+
 .card {
     background-color: #0d0d0d;
     border: 2px solid #555;
@@ -33,13 +33,13 @@ h2 {
     margin-top: 0;
 }
 
-/* Estilos do formulário */
+
 .form-group, .form-group-inline, .form-options {
     margin-bottom: 20px;
 }
 
 .form-group label, .form-group-inline label {
-    color: #00aaff; /* Cor azul do texto */
+    color: #00aaff;
     margin-right: 10px;
 }
 
@@ -48,23 +48,20 @@ h2 {
     align-items: center;
 }
 
-/* Inputs de número */
 input[type="number"] {
     background-color: #333;
     border: 1px solid #777;
     border-radius: 5px;
     color: #f0f0f0;
     padding: 8px;
-    width: 60px; /* Largura dos inputs pequenos */
+    width: 60px;
     text-align: center;
 }
 
-/* Input de quantidade (mais largo) */
 #quantidade {
     width: 80px;
 }
 
-/* Botão principal */
 button#btn-sortear {
     width: 100%;
     padding: 12px;
@@ -87,13 +84,12 @@ button#btn-sortear:disabled {
     cursor: not-allowed;
 }
 
-/* Mensagem de status (contagem/erro) */
 #status-message {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     margin-top: 15px;
-    color: #ffc107; /* Amarelo para contagem */
+    color: #ffc107;
 }
 
 /* --- RESULTADOS --- */
@@ -103,15 +99,14 @@ button#btn-sortear:disabled {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-    min-height: 50px; /* Altura mínima para manter o layout */
-    perspective: 1000px; /* Para o efeito 3D da animação */
+    min-height: 50px;
+    perspective: 1000px;
 }
 
-/* Estilo do número sorteado (escondido) */
 .numero-sorteado {
     width: 70px;
     height: 70px;
-    background-color: #333; /* Fundo escuro (costas do cartão) */
+    background-color: #333;
     border: 2px solid #555;
     border-radius: 10px;
     cursor: pointer;
@@ -119,7 +114,7 @@ button#btn-sortear:disabled {
     /* Configuração da animação de virar */
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    transform: rotateY(0deg); /* Começa virado para frente (escondido) */
+    transform: rotateY(0deg);
     
     /* Para centralizar o número quando ele aparecer */
     display: flex;
@@ -127,12 +122,12 @@ button#btn-sortear:disabled {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    color: transparent; /* Esconde o número inicialmente */
+    color: transparent;
 }
 
-/* Estilo do número revelado (ao adicionar a classe .revealed) */
+
 .numero-sorteado.revealed {
-    background-color: #f0f0f0; /* Fundo claro (frente do cartão) */
-    color: #1a1a1a; /* Texto escuro */
-    transform: rotateY(180deg); /* Vira o cartão */
+    background-color: #f0f0f0; 
+    color: #1a1a1a; 
+    transform: rotateY(180deg); 
 }
