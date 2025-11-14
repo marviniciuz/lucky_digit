@@ -5,19 +5,17 @@
 **/*.py[cod]
 **/*$py.class
 
-# --- Ambientes Virtuais (Virtual Environments) ---
-# É muito importante não subir a pasta do seu ambiente virtual
+# --- Ambientes Virtuais ---
+# não subir a pasta do seu ambiente virtual
 **/venv
 **/env
 **/.venv
 **/.env
 
 # --- Variáveis de Ambiente e Segredos ---
-# Se você criar um arquivo para guardar senhas ou chaves secretas
 **/.env
 
 # --- VS Code ---
-# Configurações locais do seu editor que não precisam ir para outros devs
 **/.vscode
 
 # --- Sistema Operacional ---
