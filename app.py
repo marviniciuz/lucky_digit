@@ -23,13 +23,14 @@ def realizar_sorteio():
         max_val = int(data['max'])
 
         if min_val >= max_val:
-            return jsonify({'error': 'O valor mínimo deve ser menor que o máximo.'}), 400
+            return jsonify({'error': 'O valor mínimo deve '
+                               'ser menor que o máximo.'}), 400
 
         if qty <= 0:
-            return jsonify({'error': 'A quantidade deve ser maior que zero.'}), 400
+            return jsonify({'error': 'A quantidade deve '
+                               'ser maior que zero.'}), 400
 
         numeros_possiveis = max_val - min_val + 1
-  
         if qty > numeros_possiveis:
             msg = f'Não é possível sortear {qty} números únicos no intervalo de {min_val} a {max_val}. (Máx: {numeros_possiveis})'
             return jsonify({'error': msg}), 400
