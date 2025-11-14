@@ -24,3 +24,6 @@ primary_region = 'gru'
 [[statics]]
   guest_path = "/app/static" # Onde a pasta 'static' está DENTRO do container
   url_prefix = "/static"     # A URL que o HTML usa (ex: /static/style.css)
+
+[processes]
+  app = "gunicorn --bind 0.0.0.0:8080 app:app"
